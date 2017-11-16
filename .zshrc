@@ -5,7 +5,7 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="robbyrussell"
+ZSH_THEME="candy"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -52,7 +52,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/apps/content/f5/load-test/tsung-1.5.1/erlang/bin"
+export PATH="/usr/bin/core_perl:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/home/blake/.gem/ruby/2.4.0/bin:/home/blake/.local/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # # Preferred editor for local and remote sessions
@@ -68,11 +68,5 @@ export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/apps/content/f5/load-
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 # export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/Users/430007920/grails/bin
-export RSYNC_PROXY=proxy-http.genworth.net:8080
-export http_proxy=http://proxy-http.genworth.net:8080
-export https_proxy=http://proxy-http.genworth.net:8080
-alias lks='links -http-proxy proxy-http.genworth.net:8080'
-unsetopt nomatch
-autoload -U promptinit
-promptinit
-prompt fade 
+. /home/blake/.local/lib/python3.6/site-packages/powerline/bindings/zsh/powerline.zsh
+alias tmux='TERM=xterm-256color tmux'
