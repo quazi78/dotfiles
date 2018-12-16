@@ -5,7 +5,7 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="candy"
+ZSH_THEME="af-magic"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -46,13 +46,13 @@ setopt HIST_IGNORE_DUPS
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git)
+plugins=(git zsh-syntax-highlighting calc)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="/usr/bin/core_perl:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/home/blake/.gem/ruby/2.4.0/bin:/home/blake/.local/bin"
+export PATH="/usr/bin/core_perl:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/home/blake/.gem/ruby/2.4.0/bin:/home/blake/.local/bin:/home/blake/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # # Preferred editor for local and remote sessions
@@ -65,8 +65,8 @@ export PATH="/usr/bin/core_perl:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/ho
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
+#source '/home/blake/lib/azure-cli/az.completion'
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 # export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/Users/430007920/grails/bin
-. /home/blake/.local/lib/python3.6/site-packages/powerline/bindings/zsh/powerline.zsh
 alias tmux='TERM=xterm-256color tmux'
