@@ -9,6 +9,12 @@ set laststatus=2
 set showtabline=2
 set hidden
 
+set expandtab
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+
+
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
