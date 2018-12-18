@@ -7,6 +7,7 @@ set ic
 set noshowmode
 set laststatus=2
 set showtabline=2
+set hidden
 
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
@@ -31,6 +32,7 @@ Plug 'kien/ctrlp.vim'
 call plug#end()
 
 map <C-o> :NERDTreeToggle<CR>
+:nnoremap <Tab> :bnext<CR>
 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
