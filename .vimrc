@@ -43,5 +43,6 @@ map <C-o> :NERDTreeToggle<CR>
 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
-
+let g:airline_theme='understated'
+let g:airline_powerline_fonts = 1
 silent! colorscheme seoul256
