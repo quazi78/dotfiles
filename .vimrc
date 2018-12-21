@@ -39,6 +39,7 @@ call plug#end()
 
 map <C-o> :NERDTreeToggle<CR>
 :nnoremap <Tab> :bnext<CR>
+:nnoremap <S-Tab> :bprev<CR>
 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
