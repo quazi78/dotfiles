@@ -70,3 +70,4 @@ export PATH="/usr/bin/core_perl:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/ho
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 # export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/Users/430007920/grails/bin
 alias tmux='TERM=xterm-256color tmux'
+source ~/.local/bin/aws_zsh_completer.sh
