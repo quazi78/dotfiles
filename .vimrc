@@ -24,6 +24,7 @@ endif
 call plug#begin('~/.vim/plugged')
 
 Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-unimpaired'
 Plug 'junegunn/seoul256.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdtree'
@@ -34,6 +35,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
 Plug 'kien/ctrlp.vim'
+Plug 'altercation/vim-colors-solarized'
 
 call plug#end()
 
@@ -45,4 +47,20 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
 let g:airline_theme='understated'
 let g:airline_powerline_fonts = 1
+
 silent! colorscheme seoul256
+
+" The Silver Searcher
+if executable('ag')
+  " Use ag over grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+  " ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
+endif
+
+nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+nnoremap ; :
