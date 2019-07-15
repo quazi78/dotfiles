@@ -14,7 +14,7 @@ set tabstop=2
 set softtabstop=2
 set shiftwidth=2
 
-
+"This will add vimplug if it is not already installed
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -62,5 +62,7 @@ if executable('ag')
   let g:ctrlp_use_caching = 0
 endif
 
+"Allows you to use Silver Searcher to search the project directory for the
+"word under the cursor by hitting K
 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 nnoremap ; :
