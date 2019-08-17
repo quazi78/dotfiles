@@ -25,7 +25,6 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-unimpaired'
-Plug 'junegunn/seoul256.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdtree'
 Plug 'hashivim/vim-terraform'
@@ -48,7 +47,9 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 let g:airline_theme='understated'
 let g:airline_powerline_fonts = 1
 
-silent! colorscheme seoul256
+silent! set bg=dark
+silent! colorscheme solarized
+
 
 " The Silver Searcher
 if executable('ag')
