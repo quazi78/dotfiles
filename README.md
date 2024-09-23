@@ -1,2 +1,13 @@
 # dotfiles
-Updated for Arch Linux.
+
+alacritty
+bat
+dunst
+i3
+nvim
+omp
+picom
+polybar
+rofi
+tmux
+zshrc
