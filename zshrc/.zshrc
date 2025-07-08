@@ -53,4 +53,4 @@ alias vim=nvim
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 # eval "$(starship init zsh)"
-eval "$(oh-my-posh init zsh --config ~/.config/omp/catppuccin_macchiato.omp.toml)"
+eval "$(oh-my-posh init zsh --config ~/.config/omp/slimfat.omp.json)"
