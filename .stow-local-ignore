@@ -1,0 +1,32 @@
+# Stow local ignore file
+# Files and directories listed here will not be symlinked by stow
+
+# Documentation
+README.md
+PLUGINS.md
+LICENSE
+*.md
+docs
+
+# Scripts
+install.sh
+uninstall.sh
+scripts
+
+# Git
+.git
+.gitignore
+.gitmodules
+
+# CI/CD
+.github
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+*.swp
+*.swo
+*~
+.*.swp

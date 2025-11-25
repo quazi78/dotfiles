@@ -1,0 +1,30 @@
+# Ghostty Configuration
+# https://ghostty.org/docs/config
+
+# Font
+font-family = "MesloLGS Nerd Font Mono"
+font-size = 13
+font-feature = "-calt"
+font-feature = "-liga"
+font-feature = "-dlig"
+
+# Theme
+# Dynamically loaded by set-theme.sh
+config-file = themes/current
+
+# Window
+window-padding-x = 10
+window-padding-y = 10
+window-decoration = true
+window-theme = "system"
+
+# Cursor
+cursor-style = block
+cursor-style-blink = false
+
+# Shell integration
+shell-integration = fish
+
+# Keybindings
+keybind = global:cmd+grave_accent=toggle_quick_terminal
+keybind = ctrl+shift+n=new_window

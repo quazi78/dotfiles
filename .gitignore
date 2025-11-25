@@ -1,5 +1,14 @@
+# Tmux plugins
 tmux/.config/tmux/plugins/
+
+# Neovim lazy-lock
 nvim/.config/nvim/lazy-lock.json
+
+# Backup directories
+.config-backup-*/
+*.backup
+*.bak
+
 # OS generated files #
 ######################
 .DS_Store
@@ -9,3 +18,13 @@ nvim/.config/nvim/lazy-lock.json
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# Editor swap files
+*.swp
+*.swo
+*~
+.*.swp
+
+# Local overrides
+*.local
+.env
