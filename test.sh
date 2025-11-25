@@ -9,4 +9,4 @@ echo "Running installation test..."
 docker run --rm -it \
     -v $(pwd):/home/testuser/dotfiles \
     dotfiles-test \
-    bash -c "cd ~/dotfiles && yes | ./install.sh"
+    bash -c "cd ~/dotfiles && yes | ./install.sh && ./scripts/verify.sh && ./scripts/test-theme.sh"

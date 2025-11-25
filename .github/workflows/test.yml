@@ -29,6 +29,11 @@ jobs:
         run: |
           su testuser -c "yes | ./install.sh"
 
+      - name: Verify Installation
+        run: |
+          su testuser -c "./scripts/verify.sh"
+          su testuser -c "./scripts/test-theme.sh"
+
   test-ubuntu:
     runs-on: ubuntu-latest
     steps:
@@ -38,3 +43,8 @@ jobs:
       - name: Run Install Script
         run: |
           yes | ./install.sh
+
+      - name: Verify Installation
+        run: |
+          ./scripts/verify.sh
+          ./scripts/test-theme.sh
