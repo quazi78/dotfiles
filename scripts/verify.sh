@@ -57,10 +57,24 @@ else
     echo -e "${YELLOW}!${NC} Command missing: ghostty (Expected in headless/CI environments)"
 fi
 check_command tmux
-check_command bat
+if command -v bat >/dev/null 2>&1 || command -v batcat >/dev/null 2>&1; then
+    print_success "Command found: bat (or batcat)"
+else
+    print_error "Command missing: bat"
+    errors=$((errors + 1))
+fi
 check_command rg
-check_command yazi
-check_command delta
+if command -v yazi >/dev/null 2>&1; then
+    print_success "Command found: yazi"
+else
+    echo -e "${YELLOW}!${NC} Command missing: yazi (Install manually if not in repos)"
+fi
+
+if command -v delta >/dev/null 2>&1; then
+    print_success "Command found: delta"
+else
+    echo -e "${YELLOW}!${NC} Command missing: delta (Install manually if not in repos)"
+fi
 check_command zoxide
 
 if [ $errors -eq 0 ]; then

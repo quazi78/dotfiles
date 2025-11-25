@@ -173,6 +173,13 @@ install_dependencies() {
             # Note: yazi and git-delta might not be in default repos for all versions
             $INSTALL_CMD neovim tmux fish git ripgrep fd-find bat fzf zoxide
             
+            # Fix bat -> batcat on Ubuntu
+            if command_exists batcat && ! command_exists bat; then
+                mkdir -p "$HOME/.local/bin"
+                ln -s /usr/bin/batcat "$HOME/.local/bin/bat"
+                print_info "Linked batcat -> ~/.local/bin/bat"
+            fi
+            
             # Try to install delta and yazi if available
             $INSTALL_CMD git-delta yazi || print_warning "git-delta or yazi not found in repos. Install manually (e.g. via cargo)."
             
