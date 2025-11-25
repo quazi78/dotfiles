@@ -70,6 +70,25 @@ elif [ "$THEME" == "catppuccin" ]; then
     sed -i 's/^# set -g @plugin .*catppuccin-tmux.*/set -g @plugin \x27dreamsofcode-io\/catppuccin-tmux\x27/' "$TMUX_CONFIG"
 fi
 
+# 6. Update Bat
+echo "Updating Bat..."
+if [ -f "bat/.config/bat/config" ]; then
+    BAT_CONFIG="bat/.config/bat/config"
+else
+    BAT_CONFIG="$HOME/.config/bat/config"
+fi
+
+if [ "$THEME" == "kanagawa" ]; then
+    sed -i 's/--theme=".*/--theme="Kanagawa"/' "$BAT_CONFIG"
+elif [ "$THEME" == "catppuccin" ]; then
+    sed -i 's/--theme=".*/--theme="Catppuccin Mocha"/' "$BAT_CONFIG"
+fi
+
+# Rebuild bat cache if bat is installed
+if command -v bat >/dev/null 2>&1; then
+    bat cache --build >/dev/null 2>&1 || true
+fi
+
 # Reload tmux if running
 if pgrep tmux >/dev/null; then
     tmux source "$TMUX_CONFIG" 2>/dev/null || true
