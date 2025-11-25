@@ -1,0 +1,40 @@
+name: Test Dotfiles
+
+on:
+  push:
+    branches: [ main, nvim, ghostty-fish-migration ]
+  pull_request:
+    branches: [ main, nvim ]
+
+jobs:
+  test-arch:
+    runs-on: ubuntu-latest
+    container: archlinux:latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install Base Dependencies
+        run: |
+          pacman -Syu --noconfirm
+          pacman -S --noconfirm git sudo base-devel
+
+      - name: Create Test User
+        run: |
+          useradd -m -G wheel -s /bin/bash testuser
+          echo "%wheel ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+          chown -R testuser:testuser .
+
+      - name: Run Install Script
+        run: |
+          su testuser -c "yes | ./install.sh"
+
+  test-ubuntu:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Run Install Script
+        run: |
+          yes | ./install.sh
