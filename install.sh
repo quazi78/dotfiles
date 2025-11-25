@@ -148,6 +148,28 @@ install_dependencies() {
             print_info "Installing core dependencies..."
             $INSTALL_CMD neovim tmux fish git ripgrep fd bat fzf zoxide git-delta yazi
             
+            # Install Paru (AUR Helper) if missing
+            if ! command_exists yay && ! command_exists paru; then
+                read -p "Install 'paru' AUR helper? (y/N): " -n 1 -r
+                echo
+                if [[ $REPLY =~ ^[Yy]$ ]]; then
+                    print_info "Installing paru-bin from AUR..."
+                    # Ensure base-devel is installed
+                    sudo pacman -S --needed --noconfirm base-devel
+                    
+                    # Clone and build
+                    git clone https://aur.archlinux.org/paru-bin.git /tmp/paru-bin
+                    (cd /tmp/paru-bin && makepkg -si --noconfirm)
+                    rm -rf /tmp/paru-bin
+                    
+                    if command_exists paru; then
+                        print_success "paru installed"
+                    else
+                        print_error "paru installation failed"
+                    fi
+                fi
+            fi
+            
             read -p "Install Ghostty terminal? (y/N): " -n 1 -r
             echo
             if [[ $REPLY =~ ^[Yy]$ ]]; then
