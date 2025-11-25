@@ -82,7 +82,7 @@ EOF
     # Unstow each package
     for package in "${packages[@]}"; do
         print_info "Unstowing: $package"
-        if stow -D "$package" 2>/dev/null; then
+        if stow -t "$HOME" -D "$package" 2>/dev/null; then
             print_success "Removed: $package"
         else
             print_warning "Could not remove: $package (may not be stowed)"

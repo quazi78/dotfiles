@@ -261,18 +261,18 @@ stow_configs() {
     # Stow each package
     for package in "${packages[@]}"; do
         print_info "Stowing: $package"
-        if stow -v "$package" 2>&1 | grep -q "CONFLICT"; then
+        if stow -t "$HOME" -v "$package" 2>&1 | grep -q "CONFLICT"; then
             print_warning "Conflict detected for $package. Use -D to delete existing symlinks first."
             read -p "  Restow $package? This will override existing symlinks (y/N): " -n 1 -r
             echo
             if [[ $REPLY =~ ^[Yy]$ ]]; then
-                stow -R "$package"
+                stow -t "$HOME" -R "$package"
                 print_success "Restowed: $package"
             else
                 print_warning "Skipped: $package"
             fi
         else
-            stow "$package"
+            stow -t "$HOME" "$package"
             print_success "Stowed: $package"
         fi
     done
