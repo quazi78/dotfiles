@@ -1,0 +1,25 @@
+# Don't let ripgrep vomit really long lines to my terminal, and show a preview.
+--max-columns=150
+--max-columns-preview
+
+# Add my 'smart' case.
+--smart-case
+
+# Don't print lines longer than 2000 chars
+--max-columns=2000
+
+# Search hidden files / directories (e.g. dotfiles) by default
+--hidden
+
+# But still ignore .git
+--glob=!.git/*
+
+# Ignore other common junk
+--glob=!node_modules/*
+--glob=!dist/*
+--glob=!build/*
+--glob=!__pycache__/*
+--glob=!.venv/*
+--glob=!env/*
+--glob=!.idea/*
+--glob=!.vscode/*

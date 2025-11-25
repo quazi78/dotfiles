@@ -28,9 +28,10 @@ if status is-interactive
     alias ta="tmux attach"
     alias tn="tmux new -s"
     
-    # Editor
-    set -gx EDITOR nvim
-    set -gx VISUAL nvim
+    # Environment Variables
+set -gx EDITOR nvim
+set -gx VISUAL nvim
+set -gx RIPGREP_CONFIG_PATH $HOME/.config/ripgrep/.ripgreprc
     
     # Path
     fish_add_path $HOME/.local/bin

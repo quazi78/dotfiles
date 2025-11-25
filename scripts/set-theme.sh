@@ -89,6 +89,14 @@ if command -v bat >/dev/null 2>&1; then
     bat cache --build >/dev/null 2>&1 || true
 fi
 
+# 7. Update Yazi
+echo "Updating Yazi..."
+if [ -f "$HOME/.config/yazi/themes/$THEME.toml" ]; then
+    ln -sf "themes/$THEME.toml" "$HOME/.config/yazi/theme.toml"
+else
+    echo -e "${RED}Warning: Yazi theme '$THEME' not found${NC}"
+fi
+
 # Reload tmux if running
 if pgrep tmux >/dev/null; then
     tmux source "$TMUX_CONFIG" 2>/dev/null || true

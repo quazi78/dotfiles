@@ -1,0 +1,82 @@
+# Kanagawa Theme for Yazi
+
+[manager]
+cwd = { fg = "#DCD7BA" }
+
+# Hovered
+hovered         = { fg = "#1F1F28", bg = "#7E9CD8" }
+preview_hovered = { underline = true }
+
+# Find
+find_keyword  = { fg = "#E6C384", italic = true }
+find_position = { fg = "#FF5D62", bg = "reset", italic = true }
+
+# Marker
+marker_selected = { fg = "#76946A", bg = "#76946A" }
+marker_copied   = { fg = "#E6C384", bg = "#E6C384" }
+marker_cut      = { fg = "#FF5D62", bg = "#FF5D62" }
+
+# Tab
+tab_active   = { fg = "#1F1F28", bg = "#DCD7BA" }
+tab_inactive = { fg = "#DCD7BA", bg = "#363646" }
+tab_width    = 1
+
+# Border
+border_symbol = "│"
+border_style  = { fg = "#54546D" }
+
+# Highlighting
+syntect_theme = "~/.config/bat/themes/Kanagawa.tmTheme"
+
+[status]
+separator_open  = ""
+separator_close = ""
+separator_style = { fg = "#54546D", bg = "#54546D" }
+
+# Mode
+mode_normal = { fg = "#1F1F28", bg = "#7E9CD8", bold = true }
+mode_select = { fg = "#1F1F28", bg = "#76946A", bold = true }
+mode_unset  = { fg = "#1F1F28", bg = "#FF5D62", bold = true }
+
+# Progress
+progress_label  = { fg = "#DCD7BA", bold = true }
+progress_normal = { fg = "#7E9CD8", bg = "#363646" }
+progress_error  = { fg = "#FF5D62", bg = "#363646" }
+
+# Permissions
+permissions_t = { fg = "#7E9CD8" }
+permissions_r = { fg = "#E6C384" }
+permissions_w = { fg = "#FF5D62" }
+permissions_x = { fg = "#76946A" }
+permissions_s = { fg = "#54546D" }
+
+[input]
+border   = { fg = "#7E9CD8" }
+title    = {}
+value    = {}
+selected = { reversed = true }
+
+[select]
+border   = { fg = "#7E9CD8" }
+active   = { fg = "#E6C384" }
+inactive = {}
+
+[tasks]
+border  = { fg = "#7E9CD8" }
+title   = {}
+hovered = { underline = true }
+
+[which]
+mask            = { bg = "#363646" }
+cand            = { fg = "#7E9CD8" }
+rest            = { fg = "#54546D" }
+desc            = { fg = "#E6C384" }
+separator       = " ➜ "
+separator_style = { fg = "#54546D" }
+
+[help]
+on      = { fg = "#98BB6C" }
+exec    = { fg = "#7E9CD8" }
+desc    = { fg = "#54546D" }
+hovered = { bg = "#363646", bold = true }
+footer  = { fg = "#DCD7BA", bg = "#363646" }

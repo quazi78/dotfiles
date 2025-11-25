@@ -101,7 +101,7 @@ backup_configs() {
     BACKUP_DIR="$HOME/.config-backup-$(date +%Y%m%d-%H%M%S)"
     mkdir -p "$BACKUP_DIR"
     
-    local configs=("nvim" "tmux" "ghostty" "bat" "fish" "omp")
+    local configs=("nvim" "tmux" "ghostty" "bat" "fish" "omp" "git" "ripgrep" "yazi")
     local backed_up=0
     
     for config in "${configs[@]}"; do
@@ -146,7 +146,7 @@ install_dependencies() {
     case $PKG_MANAGER in
         pacman)
             print_info "Installing core dependencies..."
-            $INSTALL_CMD neovim tmux fish git ripgrep fd bat fzf zoxide
+            $INSTALL_CMD neovim tmux fish git ripgrep fd bat fzf zoxide git-delta yazi
             
             read -p "Install Ghostty terminal? (y/N): " -n 1 -r
             echo
@@ -164,7 +164,11 @@ install_dependencies() {
             print_info "Updating package list..."
             sudo apt-get update
             print_info "Installing core dependencies..."
+            # Note: yazi and git-delta might not be in default repos for all versions
             $INSTALL_CMD neovim tmux fish git ripgrep fd-find bat fzf zoxide
+            
+            # Try to install delta and yazi if available
+            $INSTALL_CMD git-delta yazi || print_warning "git-delta or yazi not found in repos. Install manually (e.g. via cargo)."
             
             read -p "Install Ghostty terminal? (y/N): " -n 1 -r
             echo
@@ -181,7 +185,7 @@ install_dependencies() {
             ;;
         brew)
             print_info "Installing core dependencies..."
-            $INSTALL_CMD neovim tmux fish git ripgrep fd bat fzf zoxide
+            $INSTALL_CMD neovim tmux fish git ripgrep fd bat fzf zoxide git-delta yazi
             
             read -p "Install Ghostty terminal? (y/N): " -n 1 -r
             echo
