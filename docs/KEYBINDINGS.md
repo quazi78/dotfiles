@@ -59,31 +59,7 @@ Complete keybinding reference for all tools in this dotfiles configuration.
 
 ---
 
-## i3 Window Manager
 
-**Mod Key**: `Super` (Windows key)
-
-### Application Launching
-
-| Binding | Action |
-|---------|--------|
-
-| Binding | Action |
-|---------|--------|
-| `Mod + Shift + c` | Reload i3 config |
-| `Mod + Shift + r` | Restart i3 (preserves session) |
-| `Mod + Shift + e` | Exit i3 |
-
-### Media Keys
-
-| Binding | Action |
-|---------|--------|
-| `XF86AudioRaiseVolume` | Volume up 10% |
-| `XF86AudioLowerVolume` | Volume down 10% |
-| `XF86AudioMute` | Toggle mute |
-| `XF86AudioMicMute` | Toggle mic mute |
-
----
 
 ## Tmux
 
@@ -147,49 +123,28 @@ Complete keybinding reference for all tools in this dotfiles configuration.
 
 ---
 
-## Zsh
+## Fish Shell
 
-### Oh My Zsh Defaults
+### Autosuggestions & History
 
 | Binding | Action |
 |---------|--------|
-| `Ctrl + r` | Search command history |
-| `Ctrl + a` | Move to start of line |
-| `Ctrl + e` | Move to end of line |
-| `Ctrl + u` | Clear line before cursor |
-| `Ctrl + k` | Clear line after cursor |
-| `Ctrl + w` | Delete word before cursor |
-| `Alt + .` | Insert last argument |
-| `!!` | Repeat last command |
-| `!$` | Last argument of previous command |
+| `Right Arrow` | Accept autosuggestion |
+| `Ctrl + f` | Accept autosuggestion (same as right arrow) |
+| `Up Arrow` | Search history (matching current command) |
+| `Alt + .` | Insert last argument of previous command |
+| `Tab` | Complete command/path |
 
-### Custom Aliases
+### Zoxide (Smart cd)
 
-Check `zshrc/.zshrc` for custom aliases specific to your setup.
+| Binding | Action |
+|---------|--------|
+| `z <dir>` | Jump to directory |
+| `zi` | Interactive selection (with fzf) |
 
 ---
 
-## Rofi
 
-### Application Launcher
-
-| Binding | Action |
-|---------|--------|
-| `Enter` | Launch selected application |
-| `Shift + Enter` | Launch in terminal |
-| `Ctrl + Enter` | Launch as root |
-| `Esc` | Close Rofi |
-| `Type to search` | Filter applications |
-
-### Window Switcher
-
-| Binding | Action |
-|---------|--------|
-| `Enter` | Switch to window |
-| `Shift + Delete` | Close window |
-| `Esc` | Cancel |
-
----
 
 ## Tips
 
@@ -197,22 +152,20 @@ Check `zshrc/.zshrc` for custom aliases specific to your setup.
 
 Notice how navigation is consistent across tools:
 - **Vim/Tmux**: `Ctrl + h/j/k/l` works seamlessly
-- **i3**: `Mod + j/k/l/;` mirrors vim movement
 - **Tmux panes**: Same as vim navigation
 
 ### Discovering More Keybindings
 
 - **Neovim**: Press `Space + ?` for which-key popup
-- **i3**: Check `~/.config/i3/config`
 - **Tmux**: Press `Prefix + ?` for help
-- **Rofi**: Press `?` while in Rofi
+- **Fish**: `bind` command lists all bindings
 
 ### Custom Keybindings
 
 To add your own:
 - **Neovim**: Edit `init.lua` or create plugin configs
-- **i3**: Edit `i3/.config/i3/config`
 - **Tmux**: Edit `tmux/.config/tmux/tmux.conf`
+- **Fish**: Edit `fish/.config/fish/config.fish`
 
 ---
 

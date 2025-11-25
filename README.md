@@ -1,21 +1,21 @@
 # 🚀 Dotfiles
 
-> Modern, modular dotfiles for Arch Linux featuring Neovim, i3/Hyprland, and a beautiful terminal setup.
+> Modern, modular dotfiles for Arch Linux featuring Neovim, Fish, and Ghostty.
 
 [![OS](https://img.shields.io/badge/OS-Arch%20Linux-1793D1?logo=arch-linux&logoColor=fff)](https://archlinux.org/)
-[![Shell](https://img.shields.io/badge/Shell-Zsh-89e051?logo=gnu-bash&logoColor=fff)](https://www.zsh.org/)
+[![Shell](https://img.shields.io/badge/Shell-Fish-42b983?logo=fish&logoColor=fff)](https://fishshell.com/)
 [![Editor](https://img.shields.io/badge/Editor-Neovim-57A143?logo=neovim&logoColor=fff)](https://neovim.io/)
-[![WM](https://img.shields.io/badge/WM-i3%20%2F%20Hyprland-orange)](https://i3wm.org/)
+[![Terminal](https://img.shields.io/badge/Terminal-Ghostty-blue)](https://ghostty.org/)
 
 ## ✨ Features
 
-- 🎨 **Beautiful Aesthetics**: Kanagawa colorscheme with custom i3 theme
+- 🎨 **Beautiful Aesthetics**: Kanagawa colorscheme with custom themes
 - ⚡ **Modern Neovim**: Lua-based configuration with lazy.nvim plugin manager
-- 🪟 **Flexible Window Management**: Support for both i3 (X11) and Hyprland (Wayland)
 - 🔍 **Powerful Search**: Telescope fuzzy finder with ripgrep integration
 - 📁 **Smart File Navigation**: Neo-tree file explorer with git integration
 - 🎯 **Seamless Tmux Integration**: Navigate between vim and tmux panes effortlessly
-- 🚀 **Fast Terminal**: Alacritty and Kitty configurations included
+- 👻 **Modern Terminal**: Ghostty configuration with theme switching
+- 🐟 **Smart Shell**: Fish shell with Oh My Posh and Zoxide
 - 🎭 **Multiple Themes**: Kanagawa, Catppuccin, and Darkfox colorschemes
 
 ## 🛠️ Included Tools
@@ -56,34 +56,13 @@ sudo pacman -S ripgrep fd
 sudo pacman -S tree-sitter gcc
 ```
 
-### i3 Desktop Environment
-```bash
-# i3 ecosystem
-sudo pacman -S i3-wm i3status i3lock rofi polybar picom dunst
-
-# System utilities
-sudo pacman -S nm-applet xfce-polkit xss-lock
-
-# Fonts (required for icons)
-sudo pacman -S ttf-meslo-nerd ttf-nerd-fonts-symbols
-```
-
-### Hyprland Desktop Environment
-```bash
-# Hyprland ecosystem
-sudo pacman -S hyprland waybar wofi dunst
-
-# Additional Wayland tools
-sudo pacman -S xdg-desktop-portal-hyprland
-```
-
 ### Optional Enhancements
 ```bash
-# Oh My Zsh (install separately)
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
 # Oh My Posh (for advanced prompts)
 sudo pacman -S oh-my-posh
+
+# Zoxide (smarter cd)
+sudo pacman -S zoxide
 ```
 
 ## 🚀 Installation
@@ -127,7 +106,6 @@ If you prefer manual control:
    ```bash
    mkdir -p ~/.config-backup
    mv ~/.config/nvim ~/.config-backup/ 2>/dev/null || true
-   mv ~/.config/i3 ~/.config-backup/ 2>/dev/null || true
    # ... backup other configs as needed
    ```
 
@@ -138,9 +116,9 @@ If you prefer manual control:
 
    # Or install selectively
    stow nvim
-   stow i3
    stow tmux
-   stow zshrc
+   stow fish
+   stow ghostty
    ```
 
 4. **Install Neovim plugins**
@@ -165,23 +143,7 @@ If you prefer manual control:
 | `;` | Command mode (`:`) |
 | `Ctrl + h/j/k/l` | Navigate vim/tmux panes |
 
-### i3 Window Manager
 
-**Mod Key**: `Super` (Windows key)
-
-| Binding | Action |
-|---------|--------|
-| `Mod + Return` | Open terminal (Alacritty) |
-| `Mod + d` | Application launcher (Rofi) |
-| `Mod + Space` | Quick launcher (Rofi combi) |
-| `Mod + Tab` | Window switcher (Rofi) |
-| `Mod + Shift + q` | Kill window |
-| `Mod + h` | Split horizontal |
-| `Mod + v` | Split vertical |
-| `Mod + f` | Fullscreen |
-| `Mod + 1-9` | Switch workspace |
-| `Mod + Shift + 1-9` | Move to workspace |
-| `Mod + r` | Resize mode |
 
 ### Tmux
 
@@ -229,16 +191,13 @@ return {
 
 Lazy.nvim will automatically load it on next startup.
 
-### Customizing i3 Colors
-
-Edit `i3/.config/i3/config` and modify the color scheme section (lines 197-205).
-
 ## 📚 Documentation
 
 - [PLUGINS.md](PLUGINS.md) - Detailed Neovim plugin documentation
 - [docs/KEYBINDINGS.md](docs/KEYBINDINGS.md) - Complete keybinding reference
 - [Neovim Configuration Guide](https://neovim.io/doc/user/)
-- [i3 User Guide](https://i3wm.org/docs/userguide.html)
+- [Ghostty Documentation](https://ghostty.org/docs)
+- [Fish Shell Documentation](https://fishshell.com/docs/current/index.html)
 
 ## 🔍 Troubleshooting
 
