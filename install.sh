@@ -151,7 +151,13 @@ install_dependencies() {
             read -p "Install Ghostty terminal? (y/N): " -n 1 -r
             echo
             if [[ $REPLY =~ ^[Yy]$ ]]; then
-                $INSTALL_CMD ghostty
+                if command_exists yay; then
+                    yay -S --noconfirm ghostty
+                elif command_exists paru; then
+                    paru -S --noconfirm ghostty
+                else
+                    $INSTALL_CMD ghostty || print_warning "Ghostty not found in pacman. It is likely in the AUR (e.g. ghostty-git). Please install manually with an AUR helper."
+                fi
             fi
             
             read -p "Install Neovim dependencies (Node.js, Python)? (y/N): " -n 1 -r
